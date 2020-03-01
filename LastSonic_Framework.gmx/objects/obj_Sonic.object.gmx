@@ -110,7 +110,6 @@ if check_xbox_controller()
 p_physics();
 p_move();
 
-/*
 if collision_circle(x,y,17,obj_t_background,true,false) // Background
 {
     xlayer = 0;

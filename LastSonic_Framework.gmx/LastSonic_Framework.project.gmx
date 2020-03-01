@@ -11,7 +11,14 @@
     <sprites name="masters Collision">
       <sprite>sprites\spr_block_test</sprite>
       <sprite>sprites\spr_ramp</sprite>
+      <sprite>sprites\spr_ramp_bwall</sprite>
+      <sprite>sprites\spr_ramp_fwall</sprite>
+      <sprite>sprites\spr_test_bwall</sprite>
+      <sprite>sprites\spr_test_fwall</sprite>
     </sprites>
+    <sprite>sprites\spr_t_background</sprite>
+    <sprite>sprites\spr_t_foreground</sprite>
+    <sprite>sprites\spr_t_switch</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -48,11 +55,19 @@
       <object>objects\obj_fwalls</object>
     </objects>
     <object>objects\obj_block</object>
+    <object>objects\obj_block_bwall</object>
+    <object>objects\obj_block_fwall</object>
     <object>objects\obj_ramp</object>
+    <object>objects\obj_ramp_bwall</object>
+    <object>objects\obj_ramp_fwall</object>
     <objects name="master Camera">
       <object>objects\obj_player_camera</object>
       <object>objects\obj_display_manager</object>
     </objects>
+    <object>objects\Nah_Fam</object>
+    <object>objects\obj_t_background</object>
+    <object>objects\obj_t_foreground</object>
+    <object>objects\obj_t_switch</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Startup</room>
