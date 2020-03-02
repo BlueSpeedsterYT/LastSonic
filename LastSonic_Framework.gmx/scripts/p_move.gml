@@ -84,14 +84,21 @@ if vsp<0 && vsp>-4
 
 //stomp
 
-if !ground && key_b
+if (action == 0 || action == 1) && !ground && key_b
+{
+    action = 4
+}
+if action == 4
 {
    vsp = vspl;
    hsp = 0;
    
    if ground
    {
+    vibrate_xbox_controller(30)
+    shake_camera(15)
     vsp = 0;
+    action = 0
    }
 }
 
@@ -120,12 +127,47 @@ if key_u && ground && action =0
 }
 if (!key_u||!ground||key_r||key_l)&&action=-3 action=0;
 
-//dash
+///dash
 
-if (key_l && key_x) {
+if (xdir = -1 && key_x && (action = 0 || action = 1 || action = 2)) {
+    action = 3;
+    if action = 3
+    {
     hsp -= 4;
+    action = 0;
+    }
+    else if action = 3 && action = 1
+    {
+    hsp -= 4;
+    vsp = 0;
+    action = 0;
+    }
 }
 
-if (key_r && key_x) {
+if (xdir = 1 && key_x && (action = 0 || action = 1 || action = 2)) {
+    action = 3;
+    if action = 3
+    {
     hsp += 4;
+    action = 0;
+    }
+    else if action = 3 && action = 1
+    {
+    hsp += 4;
+    vsp = 0;
+    ground = 0;
+    action = 0;
+    }
+}
+
+///spin dash
+
+if sp > 0 {sp = sp-((sp div 1)/265)}
+if sp > 192 sp = 192;
+if action = -2 && key_a {sp+=8;}
+if action = -2 && !key_d {hsp = xdir*9+(xdir*floor(sp)/8);action = 2; sp =0;}
+if action =-1 && key_a 
+{
+    sp = 0;
+    action = -2; 
 }
