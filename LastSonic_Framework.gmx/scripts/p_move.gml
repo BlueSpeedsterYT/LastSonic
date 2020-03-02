@@ -1,13 +1,15 @@
 //controls
-key_u = keyboard_check(vk_up)  || gamepad_button_check(0,gp_padu);
-key_l = keyboard_check(vk_left)  || gamepad_button_check(0,gp_padl);
-key_r = keyboard_check(vk_right) || gamepad_button_check(0,gp_padr);
-key_d = keyboard_check(vk_down)  || gamepad_button_check(0,gp_padd);
-key_a = keyboard_check_pressed(ord('X'))  || gamepad_button_check_pressed(0,gp_face1);
-key_ar = keyboard_check_released(ord('X'))  || gamepad_button_check_released(0,gp_face1);
+key_u = keyboard_check(vk_up) || gamepad_axis_value(0,gp_axislv)>0  || gamepad_button_check(0,gp_padu);
+key_l = keyboard_check(vk_left) || gamepad_axis_value(0,gp_axislh)<0  || gamepad_button_check(0,gp_padl);
+key_r = keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh)>0 || gamepad_button_check(0,gp_padr);
+key_d = keyboard_check(vk_down)  || gamepad_axis_value(0,gp_axislv)<0 || gamepad_button_check(0,gp_padd);
+key_a = keyboard_check_pressed(ord('Z'))  || gamepad_button_check_pressed(0,gp_face1);
+key_ar = keyboard_check_released(ord('Z'))  || gamepad_button_check_released(0,gp_face1);
 key_b = keyboard_check_pressed(ord('C'))  || gamepad_button_check_pressed(0,gp_face2);
-key_x = keyboard_check_pressed(ord('Z')) || gamepad_button_check_pressed(0,gp_face3)
-key_y = keyboard_check_pressed(ord('S')) || gamepad_button_check_pressed(0,gp_face4)
+key_x = keyboard_check_pressed(ord('X')) || gamepad_button_check_pressed(0,gp_face3);
+key_y = keyboard_check_pressed(ord('S')) || gamepad_button_check_pressed(0,gp_face4);
+//key_rb = keyboard_check_pressed(ord('D')) || gamepad_button_check_pressed(0,gp_shoulderrb);
+key_start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_start);
 
 //direction
 if action = 0

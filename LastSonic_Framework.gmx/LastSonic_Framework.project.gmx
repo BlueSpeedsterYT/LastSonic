@@ -23,6 +23,14 @@
       <sprites name="Fonts">
         <sprite>sprites\spr_test</sprite>
       </sprites>
+      <sprites name="Start Up">
+        <sprite>sprites\spr_ps4_controller_boot</sprite>
+        <sprite>sprites\spr_xbox_controller_boot</sprite>
+        <sprite>sprites\spr_switch_controller_boot</sprite>
+      </sprites>
+      <sprites name="Fades">
+        <sprite>sprites\spr_dot</sprite>
+      </sprites>
     </sprites>
     <sprites name="masters Others">
       <sprite>sprites\spr_t_background</sprite>
@@ -94,10 +102,18 @@
     <objects name="master Xbox">
       <object>objects\obj_vibrate_xboxcontroller</object>
     </objects>
+    <objects name="master Startup">
+      <object>objects\obj_boot_warning</object>
+    </objects>
+    <objects name="master Fades">
+      <object>objects\obj_fade_next</object>
+      <object>objects\obj_fade_in</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Startup">
       <room>rooms\rm_Startup</room>
+      <room>rooms\rm_Controller_Warning</room>
     </rooms>
     <rooms name="Zones">
       <rooms name="Test">
