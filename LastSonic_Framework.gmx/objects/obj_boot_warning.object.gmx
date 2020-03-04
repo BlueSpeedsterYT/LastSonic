@@ -55,7 +55,8 @@ alarm[1] = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(0,0,obj_fade_next);
+            <string>instance_create(0,0,obj_boot_blackfadein);
+obj_boot_blackfadein.fadein = true;
 </string>
           </argument>
         </arguments>
@@ -81,10 +82,10 @@ alarm[1] = 200;
             <string>/// Draw the text and controllers
 draw_sprite(spr_switch_controller_boot,0,16+69,270/2);
 draw_sprite(spr_xbox_controller_boot,0,480/2,270/2);
-draw_sprite(spr_ps4_controller_boot,0,362+16,270/2);
+draw_sprite(spr_ps4_controller_boot,0,362+20,270/2);
 
 draw_set_font(global.test_font);
-draw_set_halign(fa_middle);
+draw_set_halign(fa_center);
 draw_set_colour(c_white);
 
 draw_text(480/2,224,"THIS FRAMEWORK SHOULD BE BEST#PLAYED WITH A CONTROLLER");

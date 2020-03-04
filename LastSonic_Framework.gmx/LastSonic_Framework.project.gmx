@@ -4,11 +4,112 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="SFX">
+      <sounds name="Rings">
+        <sound>sound\snd_ring</sound>
+        <sound>sound\snd_rings10</sound>
+      </sounds>
+      <sounds name="Sonic">
+        <sounds name="Voices">
+          <sound>sound\snd_SonicAttack1</sound>
+          <sound>sound\snd_SonicAttack2</sound>
+          <sound>sound\snd_SonicAttack3</sound>
+          <sound>sound\snd_SonicBoost1</sound>
+          <sound>sound\snd_SonicBoost2</sound>
+          <sound>sound\snd_SonicDie</sound>
+          <sound>sound\snd_SonicGo</sound>
+          <sound>sound\snd_SonicHurt</sound>
+          <sound>sound\snd_SonicQTE</sound>
+        </sounds>
+        <sound>sound\snd_classic_jump</sound>
+        <sound>sound\snd_jump</sound>
+        <sound>sound\snd_roll</sound>
+        <sound>sound\snd_spin</sound>
+        <sound>sound\snd_spindash</sound>
+        <sound>sound\snd_spindash_launch</sound>
+        <sound>sound\snd_homing_target</sound>
+        <sound>sound\snd_hit</sound>
+        <sound>sound\snd_homing</sound>
+      </sounds>
+      <sounds name="Rails">
+        <sound>sound\snd_grinding</sound>
+        <sound>sound\snd_railcontact</sound>
+      </sounds>
+      <sounds name="Stomp">
+        <sound>sound\snd_stomp_end</sound>
+        <sound>sound\snd_stomp_start</sound>
+      </sounds>
+      <sounds name="Pause">
+        <sound>sound\snd_pause</sound>
+        <sound>sound\snd_unpause</sound>
+      </sounds>
+      <sounds name="Spring">
+        <sound>sound\snd_spring</sound>
+      </sounds>
+      <sounds name="Checkpoint">
+        <sound>sound\snd_checkpoint</sound>
+      </sounds>
+    </sounds>
+    <sounds name="Music">
+      <sound>sound\bgm_planetwisp</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="masters Players">
       <sprites name="Base">
         <sprite>sprites\spr_player_test</sprite>
+      </sprites>
+      <sprites name="Sonic">
+        <sprite>sprites\spr_Sonic_360swing</sprite>
+        <sprite>sprites\spr_Sonic_allanimations</sprite>
+        <sprite>sprites\spr_Sonic_breakhigh</sprite>
+        <sprite>sprites\spr_Sonic_breaklow</sprite>
+        <sprite>sprites\spr_Sonic_bungee</sprite>
+        <sprite>sprites\spr_Sonic_bungeestart</sprite>
+        <sprite>sprites\spr_Sonic_corkscrew</sprite>
+        <sprite>sprites\spr_Sonic_dead1</sprite>
+        <sprite>sprites\spr_Sonic_duck</sprite>
+        <sprite>sprites\spr_Sonic_duck2</sprite>
+        <sprite>sprites\spr_Sonic_fall</sprite>
+        <sprite>sprites\spr_Sonic_grab</sprite>
+        <sprite>sprites\spr_Sonic_grind</sprite>
+        <sprite>sprites\spr_Sonic_grind_fast</sprite>
+        <sprite>sprites\spr_Sonic_hit</sprite>
+        <sprite>sprites\spr_Sonic_jog</sprite>
+        <sprite>sprites\spr_Sonic_jump</sprite>
+        <sprite>sprites\spr_Sonic_jumpend</sprite>
+        <sprite>sprites\spr_Sonic_jumpmid</sprite>
+        <sprite>sprites\spr_Sonic_land</sprite>
+        <sprite>sprites\spr_Sonic_lookup</sprite>
+        <sprite>sprites\spr_Sonic_moonwalk</sprite>
+        <sprite>sprites\spr_Sonic_qtefail</sprite>
+        <sprite>sprites\spr_Sonic_qtetrick</sprite>
+        <sprite>sprites\spr_Sonic_qtetrick2</sprite>
+        <sprite>sprites\spr_Sonic_roll</sprite>
+        <sprite>sprites\spr_Sonic_runfast</sprite>
+        <sprite>sprites\spr_Sonic_runslow</sprite>
+        <sprite>sprites\spr_Sonic_slide</sprite>
+        <sprite>sprites\spr_Sonic_slidestart</sprite>
+        <sprite>sprites\spr_Sonic_spindash</sprite>
+        <sprite>sprites\spr_Sonic_spinjump</sprite>
+        <sprite>sprites\spr_Sonic_spinroll</sprite>
+        <sprite>sprites\spr_Sonic_sprint</sprite>
+        <sprite>sprites\spr_Sonic_stand</sprite>
+        <sprite>sprites\spr_Sonic_start1</sprite>
+        <sprite>sprites\spr_Sonic_stomp</sprite>
+        <sprite>sprites\spr_Sonic_trick1</sprite>
+        <sprite>sprites\spr_Sonic_trick2</sprite>
+        <sprite>sprites\spr_Sonic_trick3</sprite>
+        <sprite>sprites\spr_Sonic_walk</sprite>
+        <sprite>sprites\spr_Sonic_wallhang</sprite>
+        <sprite>sprites\spr_Sonic_walljump</sprite>
+      </sprites>
+      <sprites name="FX">
+        <sprite>sprites\spr_stomp</sprite>
+        <sprite>sprites\spr_spindash_dust</sprite>
+        <sprite>sprites\spr_hominglock</sprite>
+        <sprite>sprites\spr_jumpfx</sprite>
       </sprites>
     </sprites>
     <sprites name="masters Collision">
@@ -29,13 +130,50 @@
         <sprite>sprites\spr_switch_controller_boot</sprite>
       </sprites>
       <sprites name="Fades">
-        <sprite>sprites\spr_dot</sprite>
+        <sprite>sprites\spr_blackblank</sprite>
+        <sprite>sprites\spr_whiteblank</sprite>
+      </sprites>
+      <sprites name="HUD">
+        <sprite>sprites\spr_hud_numbers</sprite>
+        <sprite>sprites\spr_lives_amount</sprite>
+        <sprite>sprites\spr_ring_amount</sprite>
+        <sprite>sprites\spr_text_font1</sprite>
+        <sprite>sprites\spr_text_font2</sprite>
+        <sprite>sprites\spr_time_amount</sprite>
+        <sprite>sprites\spr_qte_xboxbuttons</sprite>
       </sprites>
     </sprites>
     <sprites name="masters Others">
-      <sprite>sprites\spr_t_background</sprite>
-      <sprite>sprites\spr_t_switch</sprite>
-      <sprite>sprites\spr_t_foreground</sprite>
+      <sprites name="Layers">
+        <sprite>sprites\spr_t_background</sprite>
+        <sprite>sprites\spr_t_switch</sprite>
+        <sprite>sprites\spr_t_foreground</sprite>
+      </sprites>
+      <sprites name="Rings">
+        <sprite>sprites\spr_ring</sprite>
+        <sprite>sprites\spr_rings10</sprite>
+        <sprite>sprites\spr_ringsparkle</sprite>
+        <sprite>sprites\spr_lightring</sprite>
+        <sprite>sprites\spr_lightrings</sprite>
+      </sprites>
+      <sprites name="Pit">
+        <sprite>sprites\spr_pit</sprite>
+        <sprite>sprites\spr_pitsign</sprite>
+      </sprites>
+      <sprite>sprites\spr_checkpoint_state1</sprite>
+      <sprite>sprites\spr_checkpoint_state2</sprite>
+      <sprite>sprites\spr_checkpoint_state3</sprite>
+      <sprite>sprites\spr_dashpad</sprite>
+      <sprite>sprites\spr_dashpad_rail</sprite>
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_spring_egg</sprite>
+      <sprite>sprites\spr_testzone_rail</sprite>
+      <sprite>sprites\spr_testzone_rail_pipeline</sprite>
+      <sprite>sprites\spr_testzone_rail_slope</sprite>
+      <sprite>sprites\spr_testzone_railslope</sprite>
+      <sprite>sprites\spr_grindspark</sprite>
+      <sprite>sprites\spr_jumpramp</sprite>
+      <sprite>sprites\spr_spring_qte</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -68,6 +206,16 @@
       <script>scripts\check_xbox_controller.gml</script>
       <script>scripts\vibrate_xbox_controller.gml</script>
     </scripts>
+    <scripts name="scripts Drawing">
+      <script>scripts\draw_sprite_number.gml</script>
+      <script>scripts\draw_sprite_text.gml</script>
+      <scripts name="Characters">
+        <script>scripts\draw_Sonic.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="scripts Rings">
+      <script>scripts\scatter_rings.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\pixelOutShade.shader</shader>
@@ -75,21 +223,69 @@
   <objects name="objects">
     <objects name="master Players">
       <object>objects\obj_Sonic</object>
+      <objects name="FX">
+        <object>objects\obj_grindspark</object>
+        <object>objects\obj_stompfx</object>
+        <object>objects\obj_spindash_dust</object>
+        <object>objects\obj_jumpfx</object>
+      </objects>
+      <object>objects\obj_homable</object>
+      <object>objects\obj_hominglock</object>
+      <object>objects\obj_hurting_object</object>
     </objects>
     <objects name="master Collisions">
       <object>objects\obj_walls</object>
       <object>objects\obj_bwalls</object>
       <object>objects\obj_fwalls</object>
+      <object>objects\obj_rail</object>
     </objects>
     <objects name="master Camera">
       <object>objects\obj_player_camera</object>
       <object>objects\obj_display_manager</object>
     </objects>
     <objects name="master Other">
-      <object>objects\obj_t_background</object>
-      <object>objects\obj_t_switch</object>
-      <object>objects\obj_t_foreground</object>
-      <object>objects\obj_pit</object>
+      <objects name="Layers">
+        <object>objects\obj_t_background</object>
+        <object>objects\obj_t_switch</object>
+        <object>objects\obj_t_foreground</object>
+      </objects>
+      <objects name="Rings">
+        <object>objects\obj_ring</object>
+        <object>objects\obj_ringsparkle</object>
+        <object>objects\obj_ring_scatter1</object>
+        <object>objects\obj_ring_scatter2</object>
+        <object>objects\obj_rings10</object>
+        <object>objects\obj_lightrings</object>
+      </objects>
+      <objects name="Music">
+        <object>objects\obj_musiccontroller</object>
+      </objects>
+      <objects name="HUD">
+        <object>objects\obj_HUD_ingame</object>
+        <object>objects\obj_stagestat_controller</object>
+        <object>objects\obj_stagetime</object>
+      </objects>
+      <objects name="Pit">
+        <object>objects\obj_pit</object>
+        <object>objects\obj_pitsign</object>
+      </objects>
+      <objects name="Checkpoint">
+        <object>objects\obj_checkpoint</object>
+        <object>objects\obj_checkpoint_controller</object>
+        <object>objects\obj_checkpoint_info</object>
+      </objects>
+      <objects name="Ramps and Pads">
+        <object>objects\obj_dashpad</object>
+        <object>objects\obj_dashpad_rail</object>
+        <object>objects\obj_dashramp</object>
+      </objects>
+      <objects name="Rails">
+        <object>objects\obj_testzone_rail</object>
+        <object>objects\obj_testzone_rail_pipeline</object>
+        <object>objects\obj_testzone_rail_pipelinedown</object>
+        <object>objects\obj_testzone_rail_slope</object>
+      </objects>
+      <object>objects\obj_spring</object>
     </objects>
     <objects name="master Blocks">
       <object>objects\obj_block</object>
@@ -106,8 +302,14 @@
       <object>objects\obj_boot_warning</object>
     </objects>
     <objects name="master Fades">
-      <object>objects\obj_fade_next</object>
-      <object>objects\obj_fade_in</object>
+      <object>objects\obj_blackblank_fadein</object>
+      <object>objects\obj_resultscreen_blackfadein</object>
+      <object>objects\obj_boot_blackfadein</object>
+      <object>objects\obj_resultscreen_whitefadein</object>
+      <object>objects\obj_titlecard_blackblank_fadeout</object>
+      <object>objects\obj_stage_blackblank_fadeout</object>
+      <object>objects\obj_boot_blackblank_fadeout</object>
+      <object>objects\obj_titlecard_whiteblank_fadeout</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -26,6 +26,8 @@ if xlayer == 0 && collision_point(x1,y1,obj_bwalls,true,true)
 done1 = true;
 if xlayer == 1 && collision_point(x1,y1,obj_fwalls,true,true)
 done1 = true;
+if canGrind && collision_point(x1,y1,obj_rail,true,true)
+done1 = true;
 x1 += asin;
 y1 += acos;
 }
@@ -37,6 +39,8 @@ if xlayer == 0 && collision_point(x2,y2,obj_bwalls,true,true)
 done2 = true;
 if xlayer == 1 && collision_point(x2,y2,obj_fwalls,true,true)
 done2 = true;
+if canGrind && collision_point(x2,y2,obj_rail,true,true)
+done2 = true
 x2 += asin;
 y2 += acos;
 }
