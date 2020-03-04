@@ -139,9 +139,9 @@ if action =2 && vsp>0 && !ground && collision_script_ground(14)//un roll on grou
 
 if key_u && ground && action =0
 {
-    if abs(hsp) < 0.2 {hsp =0;action =-3};
+    if abs(hsp) < 0.2 {hsp =0;};
 }
-if (!key_u||!ground||key_r||key_l)&&action=-3 action=0;
+if (!key_u||!ground||key_r||key_l) action=0;
 
 ///dash
 
