@@ -469,3 +469,10 @@ if action == 27
     sprp = spr_Sonic_grab
     frame += 0.125
 }
+
+//air dash
+if action == 29 && action = 1
+{
+    frame += 1
+    sprp = spr_Sonic_spinjump;
+}

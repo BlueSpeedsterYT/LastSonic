@@ -174,44 +174,31 @@ if (!key_u||!ground||key_r||key_l)&& (action=-3 && image_i >= 5)
 
 ///dash
 
-if (xdir = -1 && key_x && ground && (action = 0 || action = 1 || action = 2)) {
+if (key_x && (action = 0 || action = 1 || action = 2)) {
     action = 29;
     if action = 29
     {
-    hsp -= hspm;
+    hsp = xdir*12
     action = 0;
-    audio_play_sound(snd_homing,1,false)
-    audio_play_sound(snd_SonicBoost1,1,false)
+    
+    if action != 1
+    {
+        audio_play_sound(snd_homing,1,false)
+        audio_play_sound(snd_SonicBoost1,1,false)
     }
-    else if action = 29 && !ground && action == 1
+    
+    }
+    else if action = 29 && action == 1
     {
     audio_play_sound(snd_homing,1,false)
     audio_play_sound(snd_SonicBoost2,1,false)
-    hsp -= hspm;
-    action = 0;
+    hsp = xdir*12
     vsp = 0
-    }
-}
-
-
-if (xdir = 1 && key_x && ground && (action = 0 || action = 1 || action = 2)) {
-    action = 29;
-    if action = 29
-    {
-    hsp += hspm;
+    alarm2 = 15
     action = 0;
-    audio_play_sound(snd_homing,1,false)
-    audio_play_sound(snd_SonicBoost1,1,false)
-    }
-    else if action = 29 && !ground && action == 1
-    {
-        audio_play_sound(snd_homing,1,false)
-        audio_play_sound(snd_SonicBoost2,1,false)
-        hsp += hspm;
-        action = 0;
-        vsp = 0
     }
 }
+
 ///spin dash
 
 if sp > 0 {sp = sp-((sp div 1)/265)}
@@ -267,33 +254,13 @@ if instance_exists(obj_hominglock)
         move_towards_point(obj_hominglock.x,obj_hominglock.y,20);
     }
 }
-else
-{
-    if key_a && !ground && (action == 1 || action == 0) && !djmp && djmp2
-    {
-        if action != 4.5
-            audio_play_sound(snd_homing,1,false);
-        action = 4.5
-        hsp = xdir*9
-        vsp = 0
-        alarm2 = 15
-        djmp = true
-        djmp2 = false
-    }
-}
 
 if !djmp && ground
     djmp = true
 
 if !djmp2 && ground
     djmp2 = true
-    
-    
-if action == 4.5
-{
-    hsp = xdir*12
-    vsp = 0
-}
+
 
 if action == 4 && instance_exists(obj_hominglock)
 {
