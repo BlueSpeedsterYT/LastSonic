@@ -209,6 +209,8 @@
     <scripts name="scripts Drawing">
       <script>scripts\draw_sprite_number.gml</script>
       <script>scripts\draw_sprite_text.gml</script>
+      <script>scripts\draw_circular_bar.gml</script>
+      <script>scripts\draw_gradient_circle.gml</script>
       <scripts name="Characters">
         <script>scripts\draw_Sonic.gml</script>
       </scripts>

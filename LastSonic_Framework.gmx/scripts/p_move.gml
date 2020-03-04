@@ -11,6 +11,9 @@ key_y = keyboard_check_pressed(ord('S')) || gamepad_button_check_pressed(0,gp_fa
 //key_rb = keyboard_check_pressed(ord('D')) || gamepad_button_check_pressed(0,gp_shoulderrb);
 key_start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_start);
 
+//current highest speed
+currhsph = 0
+
 //direction
 if action = 0
 {
@@ -78,16 +81,42 @@ if key_a && ground && (action = 0 || action = 2)
 
 ///smal jump
 
-if key_ar && vsp<sjmp && action =1
+if key_ar && vsp < sjmp && action == 1
 {
-    vsp =sjmp;
+    vsp = sjmp;
 }
 
-//air drag
-
-if vsp<0 && vsp>-4
+if action == 1 && !ground
 {
-    if abs(hsp) >=0.125 {hsp=hsp*adrag};
+    if key_r
+        {
+            if hsp >=0 
+            {
+                if hsp< currhsph 
+                    hsp+=acc/2
+            } 
+            else 
+                hsp+=dcc/2;
+        }
+        if key_l
+        {
+            if hsp<=0 
+            {
+                if hsp > -currhsph 
+                    hsp-=acc/2
+            }         
+            else 
+                hsp-=dcc/2;
+        }
+        if !key_r && !key_l
+        {
+            if hsp > 0 
+                hsp -= frc; 
+            if hsp < 0 
+                hsp += frc;
+            if hsp <= frc && hsp >= -frc 
+                hsp = 0;
+        }
 }
 
 //stomp
@@ -123,25 +152,25 @@ if action != 18 && audio_is_playing(snd_stomp_start)
 if ground && (action = 1)
 {action = 0;}
 
-///rolling ducking
-
+//rolling ducking
 if key_d && ground && action = 0
 {
-    if abs(hsp) < 1.03125 {hsp=0; action = -1;}
-    if abs(hsp) >= 1.03125 {action = 2; audio_play_sound(snd_roll,1,false)}  
+    if abs(hsp) < 1.03125 {hsp=0; action = -1; image_i = 0}
+    if abs(hsp) >= 1.03125 {action = 2; audio_play_sound(snd_roll,1,false)}    
 }
-if action=-1 &&!key_d {action=0;}///un duck
-if action = 2 && abs(hsp) <0.5 && ground {action =0;}///un roll
-if action =2 && vsp>0 && !ground && collision_script_ground(14)//un roll on ground
+if action == -1 && !key_d && image_i >= 5{action=0;}///un duck
+if action == 2 && abs(hsp) < 0.5 && ground {action =0;}///un roll
+if action == 2 && vsp > 0 && !ground && collision_script_ground(14)//un roll on ground
 {action = 0;}
- 
-///looking up
 
+//looking up
 if key_u && ground && action =0
 {
-    if abs(hsp) < 0.2 {hsp =0;};
+    if abs(hsp) < 0.2 {hsp =0;action =-3; image_i = 0};
 }
-if (!key_u||!ground||key_r||key_l) action=0;
+if (!key_u||!ground||key_r||key_l)&& (action=-3 && image_i >= 5)
+    action=0;
+
 
 ///dash
 

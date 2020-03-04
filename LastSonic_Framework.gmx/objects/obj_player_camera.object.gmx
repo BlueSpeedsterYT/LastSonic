@@ -30,8 +30,11 @@ canFollow = true
 shake = false
 shakeoffset = 10
 
-view_wview[0] = 480
-view_hview[0] = 270
+if instance_exists(obj_Sonic)
+{
+    x = obj_Sonic.x
+    y = obj_Sonic.y
+}
 </string>
           </argument>
         </arguments>
@@ -102,18 +105,23 @@ view_hview[0] = 270
             <kind>1</kind>
             <string>if canFollow
 {
-    if !(abs(obj_Sonic.hsp) &lt;= 0.625 &amp;&amp; obj_Sonic.vsp &lt;= 0.3125)
+    if !(obj_Sonic.action == 14 &amp;&amp; abs(obj_Sonic.hsp) &lt;= 0.625 &amp;&amp; obj_Sonic.vsp &lt;= 0.3125)
     {
-        x = clamp(obj_Sonic.x + obj_Sonic.hsp*12*obj_Sonic.acos,view_wview[0]/2,room_width - (view_wview[0]/2));
-        y = clamp(obj_Sonic.y + obj_Sonic.vsp*2,view_hview[0]/2,room_height - (view_hview[0]/2));
+        x = clamp(obj_Sonic.x + obj_Sonic.hsp*12*obj_Sonic.acos,obj_display_manager.ideal_width/2,room_width - (obj_display_manager.ideal_width/2));
+        y = clamp(obj_Sonic.y + obj_Sonic.vsp*2,obj_display_manager.ideal_height/2,room_height - (obj_display_manager.ideal_height/2));
     
         view_xview[0] += ((x-(view_wview[0]/2)) - view_xview[0]) * 0.2 + shake*choose(random(shakeoffset),-random(shakeoffset));
-        view_yview[0] += ((y-(view_hview[0]/2)) - view_yview[0]) * 0.9 + shake*choose(random(shakeoffset),-random(shakeoffset));
+        
+        if !obj_Sonic.ground 
+            view_yview[0] += ((y-(view_hview[0]/2)) - view_yview[0]) * 1 + shake*choose(random(shakeoffset),-random(shakeoffset));
+        else
+            view_yview[0] = obj_Sonic.y - view_hview[0]/2 + shake*choose(random(shakeoffset),-random(shakeoffset));
+        
     }
     else
     {
-        x = /*obj_Sonic.x*/ clamp(obj_Sonic.x,view_wview[0]/2,room_width - (view_wview[0]/2));
-        y =/* obj_Sonic.y*/ clamp(obj_Sonic.y,view_hview[0]/2,room_height - (view_hview[0]/2));
+        x = clamp(obj_Sonic.x,obj_display_manager.ideal_width/2,room_width - (obj_display_manager.ideal_width/2));
+        y = clamp(obj_Sonic.y,obj_display_manager.ideal_height/2,room_height - (obj_display_manager.ideal_height/2));
     
         view_xview[0] = obj_Sonic.x - view_wview[0]/2
         view_yview[0] = obj_Sonic.y - view_hview[0]/2
@@ -135,7 +143,18 @@ view_hview[0] = 270
     if offset &lt; -125
         offset = -125    
 }
-
+/*
+else if obj_Sonic.stageClear
+{
+    if instance_exists(obj_goalring)
+    {
+        x = obj_goalring.x
+        y = obj_goalring.y
+        
+        view_xview[0] += ((x-(view_wview[0]/2)) - view_xview[0]) * 0.5
+        view_yview[0] += ((y-(view_hview[0]/2)) - view_yview[0]) * 0.5
+    }
+}
 </string>
           </argument>
         </arguments>

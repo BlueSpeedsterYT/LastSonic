@@ -152,6 +152,7 @@
     <instance objName="obj_testzone_rail" x="288" y="624" name="inst_FD62E511" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pitsign" x="208" y="560" name="inst_F32A4EBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pit" x="0" y="784" name="inst_75C1CFCE" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_block" x="-32" y="0" name="inst_4728C9F1" locked="0" code="" scaleX="1" scaleY="25.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
