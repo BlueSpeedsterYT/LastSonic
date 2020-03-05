@@ -16,8 +16,8 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1158</w>
-    <h>660</h>
+    <w>1142</w>
+    <h>654</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>158</xoffset>
-    <yoffset>-90</yoffset>
+    <page>0</page>
+    <xoffset>371</xoffset>
+    <yoffset>335</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="" xview="0" yview="0" wview="480" hview="270" xport="0" yport="0" wport="480" hport="270" hborder="0" vborder="0" hspeed="0" vspeed="0"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="480" hview="270" xport="0" yport="0" wport="480" hport="270" hborder="0" vborder="0" hspeed="0" vspeed="0"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -147,12 +147,21 @@
     <instance objName="obj_block" x="352" y="624" name="inst_E857A785" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_ramp" x="448" y="720" name="inst_EA1D89D0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_testzone_rail" x="224" y="624" name="inst_630145E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_testzone_rail_pipeline" x="224" y="496" name="inst_20A6D172" locked="0" code="" scaleX="-2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spring" x="112" y="496" name="inst_F2B2BDF2" locked="0" code="force_power = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="45"/>
+    <instance objName="obj_testzone_rail_pipeline" x="224" y="504" name="inst_20A6D172" locked="0" code="" scaleX="-2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring" x="112" y="496" name="inst_F2B2BDF2" locked="0" code="force_power = 16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="45"/>
     <instance objName="obj_testzone_rail" x="288" y="624" name="inst_FD62E511" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pitsign" x="208" y="560" name="inst_F32A4EBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pit" x="0" y="784" name="inst_75C1CFCE" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="-32" y="0" name="inst_4728C9F1" locked="0" code="" scaleX="1" scaleY="25.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_block" x="416" y="464" name="inst_D7F792CC" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goalring" x="160" y="448" name="inst_18D3AD23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggspinner" x="816" y="320" name="inst_471827B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggspinner" x="880" y="288" name="inst_61DEF52E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggspinner" x="736" y="208" name="inst_DDEA9C9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggpawn_labour" x="544" y="128" name="inst_B7AFA709" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggpawn_labour" x="672" y="128" name="inst_FAC4F107" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggpawn_labour" x="544" y="768" name="inst_311C1815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_eggpawn_labour" x="608" y="768" name="inst_CF300390" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

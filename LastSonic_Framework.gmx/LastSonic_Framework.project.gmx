@@ -46,9 +46,20 @@
       </sounds>
       <sounds name="Spring">
         <sound>sound\snd_spring</sound>
+        <sound>sound\snd_spring_egg</sound>
       </sounds>
       <sounds name="Checkpoint">
         <sound>sound\snd_checkpoint</sound>
+      </sounds>
+      <sounds name="Enemies">
+        <sound>sound\snd_enemy_explosion</sound>
+        <sound>sound\snd_enemy_hit1</sound>
+        <sound>sound\snd_enemy_hit2</sound>
+        <sound>sound\snd_enemy_hit3</sound>
+      </sounds>
+      <sounds name="Goal">
+        <sound>sound\snd_goal</sound>
+        <sound>sound\snd_goalring</sound>
       </sounds>
     </sounds>
     <sounds name="Music">
@@ -144,6 +155,7 @@
       </sprites>
     </sprites>
     <sprites name="masters Others">
+      <sprite>sprites\spr_ranks</sprite>
       <sprites name="Layers">
         <sprite>sprites\spr_t_background</sprite>
         <sprite>sprites\spr_t_switch</sprite>
@@ -173,7 +185,18 @@
       <sprite>sprites\spr_testzone_railslope</sprite>
       <sprite>sprites\spr_grindspark</sprite>
       <sprite>sprites\spr_jumpramp</sprite>
+      <sprite>sprites\spr_wallstick</sprite>
+      <sprite>sprites\spr_goalring</sprite>
       <sprite>sprites\spr_spring_qte</sprite>
+      <sprites name="Enemies">
+        <sprite>sprites\spr_bomb</sprite>
+        <sprite>sprites\spr_eggpawn_labour_idle</sprite>
+        <sprite>sprites\spr_eggpawn_labour_walk</sprite>
+        <sprite>sprites\spr_eggspinner</sprite>
+        <sprite>sprites\spr_explosion</sprite>
+        <sprite>sprites\spr_spikeball</sprite>
+      </sprites>
+      <sprite>sprites\spr_wisp_boost</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -230,10 +253,12 @@
         <object>objects\obj_stompfx</object>
         <object>objects\obj_spindash_dust</object>
         <object>objects\obj_jumpfx</object>
+        <object>objects\obj_trail</object>
+        <object>objects\obj_hominglock</object>
       </objects>
       <object>objects\obj_homable</object>
-      <object>objects\obj_hominglock</object>
       <object>objects\obj_hurting_object</object>
+      <object>objects\obj_enemy</object>
     </objects>
     <objects name="master Collisions">
       <object>objects\obj_walls</object>
@@ -287,7 +312,20 @@
         <object>objects\obj_testzone_rail_pipelinedown</object>
         <object>objects\obj_testzone_rail_slope</object>
       </objects>
-      <object>objects\obj_spring</object>
+      <objects name="Spring">
+        <object>objects\obj_spring</object>
+        <object>objects\obj_spring_egg</object>
+      </objects>
+      <objects name="Goal">
+        <object>objects\obj_goalring</object>
+      </objects>
+      <objects name="Enemies">
+        <object>objects\obj_eggpawn_labour</object>
+        <object>objects\obj_eggspinner</object>
+        <object>objects\obj_spikeball</object>
+        <object>objects\obj_explosion_small</object>
+      </objects>
+      <object>objects\obj_wisp</object>
     </objects>
     <objects name="master Blocks">
       <object>objects\obj_block</object>

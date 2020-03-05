@@ -96,6 +96,7 @@ dead = false;
 
 rings = 0;
 
+stageClear = false
 
 image_alpha = 1;
 image_index = 0;
@@ -213,7 +214,16 @@ if check_xbox_controller()
     input_mode = 1
 
 p_physics();
-p_move();
+
+if !stageClear
+    p_move()
+else
+{
+    action = 0
+    xdir = 1
+    if abs(hsp) &lt; 9
+    hsp += acc
+}
 
 if collision_circle(x,y,17,obj_t_background,true,false) // Background
 {
