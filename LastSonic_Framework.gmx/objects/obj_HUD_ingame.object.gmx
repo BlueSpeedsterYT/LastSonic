@@ -29,7 +29,10 @@
 alarm[0] = 60   //just used for showing hud right after stage start
 alpha = 0
 
-view_wview[0] = 480;
+red_timer = 10 //Once this timer runs out,the RING text will be displayed in red for a second.
+draw_red = false;
+
+view_wview[0] = 456;
 
 x_lifeoffset = view_xview[0]+view_wview[0]*0.80
 y_lifeoffset = view_yview[0]+20
@@ -40,9 +43,33 @@ y_ringoffset = view_yview[0]+60
 
 ring = -1
 life = -1
+score_hud = -1
 time = -1
 number = -1
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_red = !draw_red
 </string>
           </argument>
         </arguments>
@@ -99,9 +126,25 @@ y_ringoffset = view_yview[0]+45
 
 ring = spr_ring_amount
 life = spr_lives_amount
+score_hud = spr_score_amount
 time = spr_time_amount
 number = spr_hud_numbers
 
+// Set up the red RINGS text timer
+
+if(obj_Sonic.rings != 0)
+{
+red_timer = 10;
+draw_red = false;
+};
+else if(obj_Sonic.rings == 0 &amp;&amp; red_timer != 0)then
+{
+red_timer -= 1;
+};
+else if(obj_Sonic.rings == 0 &amp;&amp; red_timer == 0 &amp;&amp; alarm[1] == -1 )then
+{
+alarm[1] = 20;
+};
 </string>
           </argument>
         </arguments>
@@ -126,14 +169,21 @@ number = spr_hud_numbers
             <kind>1</kind>
             <string>if show
 {
-    draw_sprite_ext(life,0,x_lifeoffset,y_lifeoffset,1,1,0,c_white,1)
-    draw_sprite_number(x_lifeoffset+30,y_lifeoffset+2,obj_stagestat_controller.lives_string,number,1)
+    draw_sprite_ext(score_hud,0,x_timeoffset,y_timeoffset,1,1,0,c_white,1)
+    draw_sprite_number(x_timeoffset+64,y_lifeoffset,obj_stagestat_controller.score_made,number,1)
+
+    draw_sprite_ext(time,0,x_timeoffset,y_timeoffset+16,1,1,0,c_white,1)
+    draw_sprite_number(x_timeoffset+64,y_lifeoffset+16,obj_stagetime.time_string,number,1)
     
-    draw_sprite_ext(time,0,x_timeoffset,y_timeoffset,1,1,0,c_white,1)
-    draw_sprite_number(x_timeoffset+30,y_lifeoffset+2,obj_stagetime.time_string,number,1)
-    
-    draw_sprite_ext(ring,0,x_ringoffset,y_ringoffset,1,1,0,c_white,1)
-    draw_sprite_number(x_ringoffset+30,y_ringoffset+2,obj_stagestat_controller.rings,number,1)
+    if(draw_red == true) 
+    {
+    draw_sprite_ext(ring,1,x_ringoffset,y_ringoffset+7,1,1,0,c_white,1)
+    }
+    else
+    {
+    draw_sprite_ext(ring,0,x_ringoffset,y_ringoffset+7,1,1,0,c_white,1)
+    }
+    draw_sprite_number(x_ringoffset+64,y_ringoffset+7,obj_stagestat_controller.rings,number,1)
 }
 </string>
           </argument>

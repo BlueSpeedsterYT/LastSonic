@@ -64,6 +64,7 @@
     </sounds>
     <sounds name="Music">
       <sound>sound\bgm_planetwisp</sound>
+      <sound>sound\bgm_select</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -147,6 +148,7 @@
       <sprites name="HUD">
         <sprite>sprites\spr_hud_numbers</sprite>
         <sprite>sprites\spr_lives_amount</sprite>
+        <sprite>sprites\spr_score_amount</sprite>
         <sprite>sprites\spr_ring_amount</sprite>
         <sprite>sprites\spr_text_font1</sprite>
         <sprite>sprites\spr_text_font2</sprite>
@@ -241,6 +243,11 @@
     <scripts name="scripts Rings">
       <script>scripts\scatter_rings.gml</script>
     </scripts>
+    <scripts name="scripts Stage List">
+      <script>scripts\stage_list_init.gml</script>
+      <script>scripts\stage_list_create.gml</script>
+      <script>scripts\stage_list_draw.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\pixelOutShade.shader</shader>
@@ -326,6 +333,9 @@
         <object>objects\obj_explosion_small</object>
       </objects>
       <object>objects\obj_wisp</object>
+      <objects name="Stage List">
+        <object>objects\obj_stage_list</object>
+      </objects>
     </objects>
     <objects name="master Blocks">
       <object>objects\obj_block</object>
@@ -345,6 +355,7 @@
       <object>objects\obj_blackblank_fadein</object>
       <object>objects\obj_resultscreen_blackfadein</object>
       <object>objects\obj_boot_blackfadein</object>
+      <object>objects\obj_stage_select_blackfadein</object>
       <object>objects\obj_resultscreen_whitefadein</object>
       <object>objects\obj_titlecard_blackblank_fadeout</object>
       <object>objects\obj_stage_blackblank_fadeout</object>
@@ -356,6 +367,7 @@
     <rooms name="Startup">
       <room>rooms\rm_Startup</room>
       <room>rooms\rm_Controller_Warning</room>
+      <room>rooms\rm_stage_select</room>
     </rooms>
     <rooms name="Zones">
       <rooms name="Test">

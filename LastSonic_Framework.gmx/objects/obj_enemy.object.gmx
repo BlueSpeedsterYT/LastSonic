@@ -74,6 +74,7 @@ instance_create(x,y,obj_explosion_small)
           <argument>
             <kind>1</kind>
             <string>instance_destroy()
+obj_Sonic.game_score += 100
 </string>
           </argument>
         </arguments>
@@ -154,19 +155,22 @@ instance_create(x,y,obj_explosion_small)
     {
         other.vsp = -other.vsp;
         instance_destroy()
+        obj_Sonic.game_score += 200
     }
     if instance_exists(obj_hominglock)
     {
         with(obj_hominglock)
         {
             instance_destroy()
+            obj_Sonic.game_score += 200*2
         }
     }
     audio_play_sound(choose(snd_enemy_hit1,snd_enemy_hit2,snd_enemy_hit3),1,false)
 }
-else if other.action == 2 || other.action == 18
+else if other.action == 2 || other.action == 18 || other.action == 29
 {
     instance_destroy()
+    obj_Sonic.game_score += 500
 }
 else if canHit &amp;&amp; other.canHit
 {

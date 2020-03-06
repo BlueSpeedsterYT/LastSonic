@@ -94,6 +94,7 @@ hitInvincible = 0 //a timer variable for post damage invincibility
 canGrind = true;    //variable for making Sonic grind on rail
 dead = false;
 
+game_score = 0;
 rings = 0;
 
 stageClear = false

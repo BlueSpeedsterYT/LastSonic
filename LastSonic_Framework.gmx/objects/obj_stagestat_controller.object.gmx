@@ -63,6 +63,21 @@ lives_string = string(lives_left)
 
 if lives_left &lt; 10
     lives_string = "0"+lives_string
+    
+score_made = string(obj_Sonic.game_score)
+
+if obj_Sonic.game_score &lt; 1000000
+    score_made = "0" + score_made
+if obj_Sonic.game_score &lt; 100000
+    score_made = "0" + score_made
+if obj_Sonic.game_score &lt; 10000
+    score_made = "0" + score_made
+if obj_Sonic.game_score &lt; 1000
+    score_made = "0" + score_made
+if obj_Sonic.game_score &lt; 100
+    score_made = "0" + score_made
+if obj_Sonic.game_score &lt; 10
+    score_made = "0" + score_made
 </string>
           </argument>
         </arguments>

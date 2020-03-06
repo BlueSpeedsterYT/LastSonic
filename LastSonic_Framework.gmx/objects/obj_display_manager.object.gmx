@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>set = 0;
 ///Display properties
-ideal_width = 480;
-ideal_height = 270;
+ideal_width = 456;
+ideal_height = 256;
 zoom = 1;
 max_zoom = 1;
 room_speed = 60

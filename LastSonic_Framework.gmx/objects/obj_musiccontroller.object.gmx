@@ -32,6 +32,13 @@ intro_length = 0
 loop_length = 0
 total_length = 0
 
+if room == rm_stage_select
+{
+    bgm = audio_play_sound(bgm_select,0,false)
+    intro_length = 0.98
+    loop_length = 14.37 
+}
+
 if room == rm_Test_Act_1
 {
     bgm = audio_play_sound(bgm_planetwisp,0,false)

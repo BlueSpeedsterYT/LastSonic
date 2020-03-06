@@ -25,42 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Controller Warning Create Code (lifted from GMate)
+            <string>/// Create.
+x = room_width/2
+    stage_list_init();
+    stage_list_create();
 
 //Spawn the fadeout object:
 instance_create(x,y,obj_boot_blackblank_fadeout)
 obj_boot_blackblank_fadeout.fadeout = true;
-
-//Play Warning Sound:
-//alarm[0] = 15;
-
-//Go to the next room:
-alarm[1] = 200;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(0,0,obj_boot_blackfadein);
-obj_boot_blackfadein.fadein = true;
 </string>
           </argument>
         </arguments>
@@ -83,14 +55,13 @@ obj_boot_blackfadein.fadein = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw the text and controllers
-draw_sprite(spr_xbox_controller_boot,0,456/2,256/2);
-
-draw_set_font(global.test_font);
-draw_set_halign(fa_center);
-draw_set_colour(c_white);
-
-draw_text(456/2,208,"THIS FRAMEWORK SHOULD BE BEST#PLAYED WITH A CONTROLLER");
+            <string>/// Draw.
+draw_set_font(global.test_font)
+draw_set_halign(fa_center)
+draw_set_color(c_white)
+draw_text(x,y,"LastSonic Framework/Engine Dev Menu
+Version 0.5.5")
+    stage_list_draw(x, y+18, 12, c_gray, c_yellow);
 </string>
           </argument>
         </arguments>
