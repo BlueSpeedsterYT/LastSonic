@@ -65,6 +65,7 @@
     <sounds name="Music">
       <sound>sound\bgm_planetwisp</sound>
       <sound>sound\bgm_select</sound>
+      <sound>sound\bgm_title</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -122,6 +123,7 @@
         <sprite>sprites\spr_spindash_dust</sprite>
         <sprite>sprites\spr_hominglock</sprite>
         <sprite>sprites\spr_jumpfx</sprite>
+        <sprite>sprites\spr_grindspark</sprite>
       </sprites>
     </sprites>
     <sprites name="masters Collision">
@@ -146,6 +148,7 @@
         <sprite>sprites\spr_whiteblank</sprite>
       </sprites>
       <sprites name="HUD">
+        <sprite>sprites\spr_ranks</sprite>
         <sprite>sprites\spr_hud_numbers</sprite>
         <sprite>sprites\spr_lives_amount</sprite>
         <sprite>sprites\spr_score_amount</sprite>
@@ -155,9 +158,13 @@
         <sprite>sprites\spr_time_amount</sprite>
         <sprite>sprites\spr_qte_xboxbuttons</sprite>
       </sprites>
+      <sprites name="Title Screen">
+        <sprites name="Start">
+          <sprite>sprites\spr_title_press_start</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="masters Others">
-      <sprite>sprites\spr_ranks</sprite>
       <sprites name="Layers">
         <sprite>sprites\spr_t_background</sprite>
         <sprite>sprites\spr_t_switch</sprite>
@@ -174,22 +181,6 @@
         <sprite>sprites\spr_pit</sprite>
         <sprite>sprites\spr_pitsign</sprite>
       </sprites>
-      <sprite>sprites\spr_checkpoint_state1</sprite>
-      <sprite>sprites\spr_checkpoint_state2</sprite>
-      <sprite>sprites\spr_checkpoint_state3</sprite>
-      <sprite>sprites\spr_dashpad</sprite>
-      <sprite>sprites\spr_dashpad_rail</sprite>
-      <sprite>sprites\spr_spring</sprite>
-      <sprite>sprites\spr_spring_egg</sprite>
-      <sprite>sprites\spr_testzone_rail</sprite>
-      <sprite>sprites\spr_testzone_rail_pipeline</sprite>
-      <sprite>sprites\spr_testzone_rail_slope</sprite>
-      <sprite>sprites\spr_testzone_railslope</sprite>
-      <sprite>sprites\spr_grindspark</sprite>
-      <sprite>sprites\spr_jumpramp</sprite>
-      <sprite>sprites\spr_wallstick</sprite>
-      <sprite>sprites\spr_goalring</sprite>
-      <sprite>sprites\spr_spring_qte</sprite>
       <sprites name="Enemies">
         <sprite>sprites\spr_bomb</sprite>
         <sprite>sprites\spr_eggpawn_labour_idle</sprite>
@@ -199,6 +190,38 @@
         <sprite>sprites\spr_spikeball</sprite>
       </sprites>
       <sprite>sprites\spr_wisp_boost</sprite>
+      <sprites name="Checkpoint">
+        <sprite>sprites\spr_checkpoint_state1</sprite>
+        <sprite>sprites\spr_checkpoint_state2</sprite>
+        <sprite>sprites\spr_checkpoint_state3</sprite>
+      </sprites>
+      <sprites name="Dash Pads">
+        <sprite>sprites\spr_dashpad</sprite>
+        <sprite>sprites\spr_dashpad_rail</sprite>
+      </sprites>
+      <sprites name="Jump Ramps">
+        <sprite>sprites\spr_jumpramp</sprite>
+      </sprites>
+      <sprites name="Wall Jump">
+        <sprite>sprites\spr_wallstick</sprite>
+      </sprites>
+      <sprites name="Rails">
+        <sprite>sprites\spr_testzone_rail</sprite>
+        <sprite>sprites\spr_testzone_rail_pipeline</sprite>
+        <sprite>sprites\spr_testzone_rail_slope</sprite>
+        <sprite>sprites\spr_testzone_railslope</sprite>
+      </sprites>
+      <sprites name="Goal">
+        <sprite>sprites\spr_goalring</sprite>
+      </sprites>
+      <sprites name="Springs">
+        <sprite>sprites\spr_spring</sprite>
+        <sprite>sprites\spr_spring_egg</sprite>
+        <sprite>sprites\spr_spring_qte</sprite>
+      </sprites>
+      <sprites name="Chaos Emeralds">
+        <sprite>sprites\spr_chaos_emerald</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -242,11 +265,6 @@
     </scripts>
     <scripts name="scripts Rings">
       <script>scripts\scatter_rings.gml</script>
-    </scripts>
-    <scripts name="scripts Stage List">
-      <script>scripts\stage_list_init.gml</script>
-      <script>scripts\stage_list_create.gml</script>
-      <script>scripts\stage_list_draw.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -333,8 +351,14 @@
         <object>objects\obj_explosion_small</object>
       </objects>
       <object>objects\obj_wisp</object>
-      <objects name="Stage List">
-        <object>objects\obj_stage_list</object>
+      <objects name="Chaos Emearlds">
+        <object>objects\obj_chaos_emerald</object>
+      </objects>
+      <objects name="Title Screen">
+        <objects name="Press Start">
+          <object>objects\obj_press_start</object>
+          <object>objects\obj_press_start_duplicate</object>
+        </objects>
       </objects>
     </objects>
     <objects name="master Blocks">
@@ -353,6 +377,7 @@
     </objects>
     <objects name="master Fades">
       <object>objects\obj_blackblank_fadein</object>
+      <object>objects\obj_blackblank_fadein_title</object>
       <object>objects\obj_resultscreen_blackfadein</object>
       <object>objects\obj_boot_blackfadein</object>
       <object>objects\obj_stage_select_blackfadein</object>
@@ -367,12 +392,21 @@
     <rooms name="Startup">
       <room>rooms\rm_Startup</room>
       <room>rooms\rm_Controller_Warning</room>
-      <room>rooms\rm_stage_select</room>
+    </rooms>
+    <rooms name="Title Screen + Menu">
+      <room>rooms\rm_title</room>
     </rooms>
     <rooms name="Zones">
       <rooms name="Test">
         <room>rooms\rm_Test_Act_1</room>
       </rooms>
+      <rooms name="Crimson Coast">
+        <room>rooms\rm_Crimson_Act_1</room>
+      </rooms>
+    </rooms>
+    <rooms name="UNUSED">
+      <room>rooms\rm_stage_select</room>
+      <room>rooms\rm_menu</room>
     </rooms>
   </rooms>
   <help>

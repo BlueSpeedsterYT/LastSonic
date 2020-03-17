@@ -1,15 +1,14 @@
 //controls
 key_u = keyboard_check(vk_up) || gamepad_axis_value(0,gp_axislv)<0  || gamepad_button_check(0,gp_padu);
 key_l = keyboard_check(vk_left) || gamepad_axis_value(0,gp_axislh)<0  || gamepad_button_check(0,gp_padl);
-key_r = keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh)>0 || gamepad_button_check(0,gp_padr);
-key_d = keyboard_check(vk_down)  || gamepad_axis_value(0,gp_axislv)>0 || gamepad_button_check(0,gp_padd);
-key_a = keyboard_check_pressed(ord('Z'))  || gamepad_button_check_pressed(0,gp_face1);
-key_ar = keyboard_check_released(ord('Z'))  || gamepad_button_check_released(0,gp_face1);
-key_b = keyboard_check_pressed(ord('C'))  || gamepad_button_check_pressed(0,gp_face2);
+key_r = keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh)>0 
+key_d = keyboard_check(vk_down) || gamepad_axis_value(0,gp_axislv)>0 
+key_a = keyboard_check_pressed(ord('Z')) || gamepad_button_check_pressed(0,gp_face1);
+key_ar = keyboard_check_released(ord('Z')) || gamepad_button_check_released(0,gp_face1);
+key_b = keyboard_check_pressed(ord('C')) || gamepad_button_check_pressed(0,gp_face2);
 key_x = keyboard_check_pressed(ord('X')) || gamepad_button_check_pressed(0,gp_face3);
 key_y = keyboard_check_pressed(ord('S')) || gamepad_button_check_pressed(0,gp_face4);
-//key_rb = keyboard_check_pressed(ord('D')) || gamepad_button_check_pressed(0,gp_shoulderrb);
-key_start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_start);
+key_start = keyboard_check_pressed(vk_enter) ||  gamepad_button_check_pressed(0,gp_start);
 
 //current highest speed
 currhsph = 0
@@ -174,28 +173,15 @@ if (!key_u||!ground||key_r||key_l)&& (action=-3 && image_i >= 5)
 
 ///dash
 
-if (key_x && (action = 0 || action = 1 || action = 2)) {
+if (key_x && ground && (action = 0 || action = 2)) {
     action = 29;
     if action = 29
     {
     hsp = xdir*12
     action = 0;
-    
-    if action != 1
-    {
-        audio_play_sound(snd_homing,1,false)
-        audio_play_sound(snd_SonicBoost1,1,false)
-    }
-    
-    }
-    else if action = 29 && action == 1
-    {
     audio_play_sound(snd_homing,1,false)
+    audio_stop_sound(snd_SonicBoost2)
     audio_play_sound(snd_SonicBoost2,1,false)
-    hsp = xdir*12
-    vsp = 0
-    alarm2 = 15
-    action = 0;
     }
 }
 
@@ -247,11 +233,28 @@ if instance_exists(obj_hominglock)
     if key_a && !djmp
     {
         if action != 4
-        audio_play_sound(snd_homing,1,false);
+            audio_play_sound(snd_homing,1,false);
         action = 4
         hsp = 0
         vsp = 0
         move_towards_point(obj_hominglock.x,obj_hominglock.y,20);
+    }
+}
+else
+{
+    if key_a && !ground && (action == 1 || action == 0) && !djmp && djmp2
+    {
+        if action != 4.5
+        {
+                audio_play_sound(snd_homing,1,false);
+        }
+        action = 4.5
+        hsp = xdir*9
+        vsp = 0
+        alarm2 = 15
+        djmp = true
+        djmp2 = false
+        image_i = 0
     }
 }
 
@@ -260,7 +263,13 @@ if !djmp && ground
 
 if !djmp2 && ground
     djmp2 = true
-
+    
+    
+if action == 4.5
+{
+    hsp = xdir*12
+    vsp = 0
+}
 
 if action == 4 && instance_exists(obj_hominglock)
 {
@@ -274,6 +283,8 @@ else
 
 if action == 4 && (place_meeting(x,y,obj_walls) || ground) 
     action = 0
+
+//after homing attack trick is action 10 which is not controlled here, however djmp2 is controlled in draw event 
 
 /// spring jump and dash ring
 
@@ -402,3 +413,16 @@ if action == 26
         vsp = 0
     }
 }
+
+///super transform
+
+if (action = 1 || key_a) && key_y && global.chaos_emeralds == 7 && obj_Sonic.rings >= 50
+    action = 30
+    if action = 30
+    {
+        action = 0;
+        hsp = 0;
+        vsp = 0;
+    }
+
+

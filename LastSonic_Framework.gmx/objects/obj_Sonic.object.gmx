@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>/// create event
 
+//input mode
+input_mode = 0
+
 //creation position
 if instance_exists(obj_checkpoint_controller) &amp;&amp; variable_instance_exists(obj_checkpoint_controller, "checkpoint")
 {
@@ -46,13 +49,14 @@ instance_create(x,y,obj_musiccontroller);
 instance_create(x,y,obj_stage_blackblank_fadeout);
 obj_stage_blackblank_fadeout.fadeout = true;
 
-//upixelH = shader_get_uniform(pixelOutShade,"pixelH");
-//upixelW = shader_get_uniform(pixelOutShade,"pixelW");
+upixelH = shader_get_uniform(pixelOutShade,"pixelH");
+upixelW = shader_get_uniform(pixelOutShade,"pixelW");
 
-//texelW = texture_get_texel_width(sprite_get_texture(sprite_index, 0));
-//texelH = texture_get_texel_height(sprite_get_texture(sprite_index, 0));
+texelW = texture_get_texel_width(sprite_get_texture(sprite_index, 0));
+texelH = texture_get_texel_height(sprite_get_texture(sprite_index, 0));
 
 gamepad_set_axis_deadzone(0,0.7);
+
 
 hsp = 0;
 vsp = 0;
@@ -120,8 +124,7 @@ alarm2 = 0
 alarm3 = 0
 alarm4 = 0
 
-//input mode
-input_mode = 0
+
 </string>
           </argument>
         </arguments>
@@ -187,7 +190,7 @@ if alarm1 &gt; 0
 if alarm2 &gt; 0
 {
     alarm2 -= 1
-    if alarm2 == 1 &amp;&amp; action == 29
+    if alarm2 == 1 &amp;&amp; action == 4.5
     {
         action = 0
         hsp = 0
@@ -273,12 +276,12 @@ if hitInvincible &gt; 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//shader_set(pixelOutShade);
-//shader_set_uniform_f(upixelW, texelW);
-//shader_set_uniform_f(upixelH, texelH);
+            <string>shader_set(pixelOutShade);
+shader_set_uniform_f(upixelW, texelW);
+shader_set_uniform_f(upixelH, texelH);
 //draw_self();
 draw_Sonic();
-//shader_reset();
+shader_reset();
 </string>
           </argument>
         </arguments>

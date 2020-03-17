@@ -471,7 +471,7 @@ if action == 27
 }
 
 //air dash
-if action == 29 && action = 1
+if action == 4.5 && action = 1
 {
     frame += 1
     sprp = spr_Sonic_spinjump;
