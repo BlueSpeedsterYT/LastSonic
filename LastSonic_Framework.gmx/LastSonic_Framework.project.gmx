@@ -61,6 +61,13 @@
         <sound>sound\snd_goal</sound>
         <sound>sound\snd_goalring</sound>
       </sounds>
+      <sounds name="Menu">
+        <sounds name="Press Start">
+          <sound>sound\snd_start</sound>
+        </sounds>
+        <sound>sound\snd_menu_switch</sound>
+        <sound>sound\snd_menu_accept</sound>
+      </sounds>
     </sounds>
     <sounds name="Music">
       <sound>sound\bgm_planetwisp</sound>
@@ -270,6 +277,9 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\pixelOutShade.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_menu</font>
+  </fonts>
   <objects name="objects">
     <objects name="master Players">
       <object>objects\obj_Sonic</object>
@@ -360,6 +370,9 @@
           <object>objects\obj_press_start_duplicate</object>
         </objects>
       </objects>
+      <objects name="Main Menu">
+        <object>objects\obj_menu</object>
+      </objects>
     </objects>
     <objects name="master Blocks">
       <object>objects\obj_block</object>
@@ -377,6 +390,7 @@
     </objects>
     <objects name="master Fades">
       <object>objects\obj_blackblank_fadein</object>
+      <object>objects\obj_blackblank_fadein_back</object>
       <object>objects\obj_blackblank_fadein_title</object>
       <object>objects\obj_resultscreen_blackfadein</object>
       <object>objects\obj_boot_blackfadein</object>
@@ -395,6 +409,7 @@
     </rooms>
     <rooms name="Title Screen + Menu">
       <room>rooms\rm_title</room>
+      <room>rooms\rm_menu</room>
     </rooms>
     <rooms name="Zones">
       <rooms name="Test">
@@ -406,7 +421,6 @@
     </rooms>
     <rooms name="UNUSED">
       <room>rooms\rm_stage_select</room>
-      <room>rooms\rm_menu</room>
     </rooms>
   </rooms>
   <help>
