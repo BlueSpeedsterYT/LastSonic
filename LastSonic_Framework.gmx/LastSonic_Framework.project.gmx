@@ -234,6 +234,9 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="scripts Init">
+      <script>scripts\scr_init.gml</script>
+    </scripts>
     <scripts name="scripts Collision">
       <script>scripts\collision_script_bottom.gml</script>
       <script>scripts\collision_script_ground.gml</script>
@@ -247,9 +250,6 @@
       <script>scripts\wrap_angle.gml</script>
       <script>scripts\find_angle_inverse.gml</script>
     </scripts>
-    <scripts name="scripts Init">
-      <script>scripts\scr_init.gml</script>
-    </scripts>
     <scripts name="scripts Camera">
       <script>scripts\shake_camera.gml</script>
     </scripts>
@@ -257,7 +257,7 @@
       <script>scripts\p_move.gml</script>
       <script>scripts\p_physics.gml</script>
     </scripts>
-    <scripts name="scripts Xbox">
+    <scripts name="scripts Controller">
       <script>scripts\check_xbox_controller.gml</script>
       <script>scripts\vibrate_xbox_controller.gml</script>
     </scripts>
@@ -273,6 +273,7 @@
     <scripts name="scripts Rings">
       <script>scripts\scatter_rings.gml</script>
     </scripts>
+    <scripts name="scripts Saving and Loading"/>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\pixelOutShade.shader</shader>
@@ -387,6 +388,7 @@
     </objects>
     <objects name="master Startup">
       <object>objects\obj_boot_warning</object>
+      <object>objects\obj_setup</object>
     </objects>
     <objects name="master Fades">
       <object>objects\obj_blackblank_fadein</object>
@@ -421,6 +423,7 @@
     </rooms>
     <rooms name="UNUSED">
       <room>rooms\rm_stage_select</room>
+      <room>rooms\rm_setup</room>
     </rooms>
   </rooms>
   <help>
